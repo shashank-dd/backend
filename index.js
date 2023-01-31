@@ -4,8 +4,8 @@ const  mongoose  = require("mongoose");
 
 
 const dotenv = require("dotenv").config()
-
-mongoose.connect(process.env.mongo_url, {
+// process.env.mongo_url
+mongoose.connect("mongodb://localhost/api_web_tech_assignment", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -23,7 +23,7 @@ const app = express();
 // app.use(cors({
 //     origin: "*",
 // }))
-const port = process.env.PORT || 8080
+const port = 3005
 app.use(express.json());                                
 
 app.use("/", data)
